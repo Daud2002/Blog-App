@@ -1,0 +1,15 @@
+.nav-img{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    justify-content: flex-start !important;
+}
+.res_div{
+    display: none !important; 
+}
+.show_div{
+    display: block !important; 
+}
+.active{
+ @apply text-mycolor underline underline-offset-4;
+}

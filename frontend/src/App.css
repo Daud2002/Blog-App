@@ -1,0 +1,28 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
+.pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+.pagination li{
+  margin: 0px 5px;
+}
+.pagination li.activerpagination{
+  background-color: #D4AF37;
+  color: white;
+  font-weight: bold;
+  height: 100%;
+}
+.activebtn{
+  color: #D4AF37;
+}
+.active-button{
+  color: #D4AF37;
+}

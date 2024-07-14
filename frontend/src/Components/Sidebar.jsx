@@ -1,0 +1,52 @@
+import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { FaLongArrowAltRight } from "react-icons/fa";
+
+export default function Sidebar() {
+
+  let [sidedData, setsidedData] = useState([]);
+
+  useEffect(() => {
+
+    fetch(`http://localhost:4000/blogs`)
+      .then(res => res.json())
+      .then((final_res) => {
+        setsidedData(final_res.slice(0, 15))
+      })
+  }, [])
+
+
+  return (
+    <div>
+
+                                                            {/* Latest Blogs */}
+      <div className='md:p-0 p-6'>
+        <h3 className='text-2xl font-bold px-4 text-center mb-6 text-mycolor'>Latest Blogs</h3>
+        <div>
+
+          {
+            sidedData.slice(0, 5).map(data => <div key={data.id}className=' border-b-2 py-3'>
+              <h3 className=' font-medium '>{data.title}</h3>
+              <Link to={`/blogs/${data.id}`} className=' hover:text-mycolor inline-flex items-center font-bold pt-4'>Read More <FaLongArrowAltRight className=' mt-1 ml-2' /></Link>
+            </div>)
+          }
+        </div>
+      </div>
+                                                              {/* Popular Blogs */}
+      <div className='md:p-0 p-6 mt-8'>
+        <h3 className='text-2xl font-bold px-4 text-center mb-6 text-mycolor'>Popular Blogs</h3>
+        <div>
+
+          {
+            sidedData.slice(6, 11).map(data => <div key={data.id} className=' border-b-2 py-3'>
+              <h3 className=' font-medium '>{data.title}</h3>
+              <Link to={`/blogs/${data.id}`} className=' hover:text-mycolor inline-flex items-center font-bold pt-4'>Read More <FaLongArrowAltRight className=' mt-1 ml-2' /></Link>
+            </div>)
+          }
+        </div>
+      </div>
+
+
+    </div>
+  )
+}
