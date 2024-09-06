@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaLongArrowAltRight } from "react-icons/fa";
+import axios from 'axios';
 
 export default function Sidebar() {
 
   let [sidedData, setsidedData] = useState([]);
 
-  useEffect(() => {
+  const fetch_data = async() =>{
+    const response = await axios.get('https://apiblogsbydaud.vercel.app/');
+    setsidedData(response.data.slice(0,15))
+  }
 
-    fetch(`http://localhost:4000/blogs`)
-      .then(res => res.json())
-      .then((final_res) => {
-        setsidedData(final_res.slice(0, 15))
-      })
+  useEffect(() => {
+    fetch_data();
   }, [])
 
 
