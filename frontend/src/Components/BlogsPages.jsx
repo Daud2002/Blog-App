@@ -13,7 +13,7 @@ export default function BlogsPages() {
   const [selectedCategory, setselectedCategory] = useState(null);
   const [activeCategory, setactiveCategory] = useState(null);
 
-  const fetch_data = async(url) =>{
+  const fetch_data = async (url) => {
     const response = await axios.get(url);
     setblogs(response.data);
   }
@@ -23,9 +23,9 @@ export default function BlogsPages() {
     if (selectedCategory) {
       url += `&category=${selectedCategory}`
     }
-   fetch_data(url);
-
+    fetch_data(url);
   }, [currentPage, pagesize, selectedCategory])
+  
 
   // PAGINATION
   const handlepageChange = (PageNumber) => {

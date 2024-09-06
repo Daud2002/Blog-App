@@ -3,10 +3,11 @@ import React from 'react'
 export default function Pagination({ blogs, currentPage, pagesize, onPageChange }) {
 
     const totalpage = Math.ceil(blogs.length / pagesize);
+
+    
     const renderpaginationLinks = () => {
         return Array.from({ length: totalpage }, (_, i) => i + 1).map((pageNumber) => (
             <li className={pageNumber === currentPage ? "activerpagination" : ''} key={pageNumber}>
-
                 <a href="#" onClick={() => onPageChange(pageNumber)} className='border border-[#ccc] px-2 py-1 hover:bg-mycolor hover:text-white hover:font-bold'> {pageNumber} </a>
             </li>
         ))

@@ -25,7 +25,7 @@ export default function Nav() {
     <>
     <header>
       {/* Nav_Bar */}
-      <nav className='w-[100%] bg-[black] text-white  fixed top-0 left-0 right-0 max-w-7xl mx-auto flex justify-between items-center p-4 z-10'>
+      <nav className='bg-[black] text-white  fixed top-0 left-0 right-0 w-full max-w-7xl mx-auto flex justify-between items-center p-4 z-10'>
         <a href='/' className=' cursor-pointer text-sm'>Daud's<span className=' text-xl text-mycolor font-extrabold'> Blogs</span></a>
         <ul className='md:flex gap-12 text-lg hidden items-center'>
 
