@@ -9,7 +9,7 @@ app.use(cors())
 app.use(express.json())
 
 app.get('/', (req, res) => {
-    res.send("Blog server is running!")
+    res.json({message : "Blog server is running!"})
 });
 
 app.get('/blogs', (req, res) => {

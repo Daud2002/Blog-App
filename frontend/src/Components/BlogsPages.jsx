@@ -26,6 +26,7 @@ export default function BlogsPages() {
 
   }, [currentPage, pagesize, selectedCategory])
 
+  // PAGINATION
   const handlepageChange = (PageNumber) => {
     setCurrentPage(PageNumber)
   }
@@ -40,18 +41,18 @@ export default function BlogsPages() {
 
     <div>
       <div>
-      <CategorySelection onselectCategory={handleCategoryChange} selectedCategory={selectedCategory} activeCategory={activeCategory} />
+        <CategorySelection onselectCategory={handleCategoryChange} selectedCategory={selectedCategory} activeCategory={activeCategory} />
       </div>
 
       <div className=' flex flex-col lg:flex-row gap-10'>
-      <BlogCards blogs={blogs} currentPage={currentPage} selectedCategory={selectedCategory} pagesize={pagesize} />
-      <div >
-        <Sidebar />
-      </div>
+        <BlogCards blogs={blogs} currentPage={currentPage} selectedCategory={selectedCategory} pagesize={pagesize} />
+        <div >
+          <Sidebar />
+        </div>
       </div>
 
       <div>
-      <Pagination blogs={blogs} currentPage={currentPage} pagesize={pagesize} onPageChange={handlepageChange} />
+        <Pagination blogs={blogs} currentPage={currentPage} pagesize={pagesize} onPageChange={handlepageChange} />
       </div>
 
     </div>
