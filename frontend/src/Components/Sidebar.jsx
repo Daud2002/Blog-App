@@ -8,7 +8,7 @@ export default function Sidebar() {
   let [sidedData, setsidedData] = useState([]);
 
   const fetch_data = async() =>{
-    const response = await axios.get('https://apiblogsbydaud.vercel.app/');
+    const response = await axios.get('https://apiblogsbydaud.vercel.app/blogs');
     setsidedData(response.data.slice(0,15))
   }
 
