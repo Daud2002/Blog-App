@@ -30,7 +30,7 @@ export default function BlogDetails() {
                 <img src={blogs_list.image} alt="" className='w-[90%] border rounded-xl shadow-gold' />
             </div>
 
-            <hr className='md:border-l-2 border-mycolor md:h-[90vh]' />
+                
 
             <div className='md:w-[50%] flex justify-center'>
                 <div className=' shadow-2xl p-8 flex justify-center flex-col w-[90%]'>

@@ -18,7 +18,7 @@ export default function Nav() {
     { path: '/blogs', link: "Blogs" },
     { path: '/services', link: "Services" },
     { path: '/about', link: "About" },
-    { path: '/contact', link: "Contact" },
+    { path: '/contact', link: "Contact" }
   ]
 
   return (

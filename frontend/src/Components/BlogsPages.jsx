@@ -3,6 +3,7 @@ import BlogCards from './BlogCards';
 import Pagination from './Pagination';
 import CategorySelection from './CategorySelection';
 import Sidebar from './Sidebar';
+import axios from 'axios';
 
 export default function BlogsPages() {
 
@@ -12,17 +13,17 @@ export default function BlogsPages() {
   const [selectedCategory, setselectedCategory] = useState(null);
   const [activeCategory, setactiveCategory] = useState(null);
 
+  const fetch_data = async(url) =>{
+    const response = await axios.get(url);
+    setblogs(response.data);
+  }
+
   useEffect(() => {
-    let url = `http://localhost:4000/blogs?page=${currentPage}&limit=${pagesize}`;
+    let url = `https://apiblogsbydaud.vercel.app/blogs?page=${currentPage}&limit=${pagesize}`;
     if (selectedCategory) {
       url += `&category=${selectedCategory}`
     }
-    fetch(url)
-      .then((res) => res.json())
-      .then((finalres) => {
-        console.log(finalres)
-        setblogs(finalres)
-      })
+   fetch_data(url);
 
   }, [currentPage, pagesize, selectedCategory])
 

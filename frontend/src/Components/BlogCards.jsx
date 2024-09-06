@@ -10,13 +10,13 @@ export default function BlogCards({ blogs, currentPage, selectedCategory, pagesi
     <div className='grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10 p-5'>
       {filtered_blogs.map((items) => {
         return (
-          <div key={items.id} className='shadow-gold p-2'>
+          <div key={items.id} className='shadow-2xl p-2'>
 
             <div className='w-full flex flex-col'>
               <img src={items.image} alt="" className='m-auto border rounded' />
-              <Link to={`/blogs/${items.id}`} className=' hover:text-mycolor font-bold p-3'>{items.title}</Link>
-              <p className='ml-4 mb-1 mt-6 '><span className=' font-bold italic'>Author: </span>{items.author}</p>
-              <p className=' ml-4 mb-4 '><span className=' font-bold italic'>Date: </span>  {items.published_date}</p>
+              <Link to={`/blogs/${items.id}`} className=' hover:text-mycolor font-semibold p-3 text-justify'>{items.title}</Link>
+              <p className='ml-4 mb-1 mt-2 font-light flex justify-between pr-3'><span className=' font-semibold'>Author: </span>{items.author}</p>
+              <p className=' ml-4 mb-4 font-light flex justify-between pr-3'><span className='font-semibold'>Date: </span>  {items.published_date}</p>
             </div>
           </div>
         )
