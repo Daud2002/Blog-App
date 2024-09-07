@@ -11,7 +11,7 @@ export default function BlogDetails() {
 
     useEffect(() => {
         const fetchList = async () => {
-            const response = await axios.get('http://localhost:4000/blogs');
+            const response = await axios.get('https://apiblogsbydaud.vercel.app/blogs');
             setData(response.data)
         }
         fetchList();
